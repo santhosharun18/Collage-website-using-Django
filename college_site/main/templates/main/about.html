@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Excellence College</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h2>Excellence College</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                    <li><a href="{% url 'about' %}" class="nav-link active">About</a></li>
+                    <li><a href="{% url 'courses' %}" class="nav-link">Courses</a></li>
+                    <li><a href="{% url 'placements' %}" class="nav-link">Placements</a></li>
+                    <li><a href="{% url 'students' %}" class="nav-link">Students</a></li>
+                    <li><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>About Excellence College</h1>
+                <p>Discover our rich history, mission, and commitment to educational excellence</p>
+            </div>
+        </section>
+
+        <section class="about-intro">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Our Story</h2>
+                        <p>Founded in 1975, Excellence College has been at the forefront of higher education for over five decades. What started as a small institution with a vision to provide quality education has grown into one of the most prestigious colleges in the region.</p>
+                        <p>Our commitment to academic excellence, innovative teaching methods, and holistic student development has produced thousands of successful graduates who are making significant contributions across various industries worldwide.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=800" alt="College History">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mission-vision">
+            <div class="container">
+                <div class="mv-grid">
+                    <div class="mv-card">
+                        <div class="mv-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>To be a globally recognized institution of higher learning that transforms students into confident, innovative, and socially responsible leaders who contribute meaningfully to society.</p>
+                    </div>
+                    <div class="mv-card">
+                        <div class="mv-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To provide world-class education through innovative teaching, cutting-edge research, and industry partnerships while fostering critical thinking, creativity, and ethical values in our students.</p>
+                    </div>
+                    <div class="mv-card">
+                        <div class="mv-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Our Values</h3>
+                        <p>Integrity, Excellence, Innovation, Inclusivity, and Social Responsibility guide everything we do, ensuring our graduates are well-prepared for the challenges of tomorrow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="achievements">
+            <div class="container">
+                <h2 class="section-title">Our Achievements</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>National Recognition</h3>
+                        <p>Ranked among the top 10 colleges in the country for academic excellence and student satisfaction.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Accreditation</h3>
+                        <p>Fully accredited by national education bodies with highest ratings for quality assurance.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Industry Awards</h3>
+                        <p>Multiple awards for innovation in education, student placement, and community service.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Global Partnerships</h3>
+                        <p>Strategic partnerships with leading universities and corporations worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="leadership">
+            <div class="container">
+                <h2 class="section-title">Leadership Team</h2>
+                <div class="leadership-grid">
+                    <div class="leader-card">
+                        <div class="leader-image">
+                            <img src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Dr. Sarah Johnson">
+                        </div>
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p class="leader-title">President</p>
+                        <p>Leading the institution with 25+ years of experience in higher education administration.</p>
+                    </div>
+                    <div class="leader-card">
+                        <div class="leader-image">
+                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Prof. Michael Chen">
+                        </div>
+                        <h3>Prof. Michael Chen</h3>
+                        <p class="leader-title">Academic Dean</p>
+                        <p>Overseeing academic programs with expertise in curriculum development and quality assurance.</p>
+                    </div>
+                    <div class="leader-card">
+                        <div class="leader-image">
+                            <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Dr. Emily Davis">
+                        </div>
+                        <h3>Dr. Emily Davis</h3>
+                        <p class="leader-title">Student Affairs Director</p>
+                        <p>Dedicated to student success and campus life enhancement with focus on holistic development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Excellence College</h3>
+                    <p>Committed to providing quality education and shaping future leaders across various disciplines.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'courses' %}">Courses</a></li>
+                        <li><a href="{% url 'placements' %}">Placements</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@excellencecollege.edu</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Education Ave, City, State 12345</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Excellence College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <script src="{% static 'js/navigation.js' %}" defer></script>
+</body>
+</html>

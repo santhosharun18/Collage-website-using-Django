@@ -1,0 +1,310 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students - Excellence College</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h2>Excellence College</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                    <li><a href="{% url 'about' %}" class="nav-link">About</a></li>
+                    <li><a href="{% url 'courses' %}" class="nav-link">Courses</a></li>
+                    <li><a href="{% url 'placements' %}" class="nav-link">Placements</a></li>
+                    <li><a href="{% url 'students' %}" class="nav-link active">Students</a></li>
+                    <li><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Student Life</h1>
+                <p>Discover vibrant campus life, student achievements, and testimonials</p>
+            </div>
+        </section>
+
+        <section class="student-life">
+            <div class="container">
+                <h2 class="section-title">Campus Life</h2>
+                <div class="life-grid">
+                    <div class="life-card">
+                        <div class="life-image">
+                            <img src="https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Modern Campus">
+                        </div>
+                        <div class="life-content">
+                            <h3>Modern Campus</h3>
+                            <p>State-of-the-art facilities with smart classrooms, advanced laboratories, and recreational spaces designed for optimal learning and growth.</p>
+                        </div>
+                    </div>
+                    <div class="life-card">
+                        <div class="life-image">
+                            <img src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Student Activities">
+                        </div>
+                        <div class="life-content">
+                            <h3>Student Activities</h3>
+                            <p>Over 50 student clubs, sports teams, cultural organizations, and leadership opportunities to develop well-rounded personalities.</p>
+                        </div>
+                    </div>
+                    <div class="life-card">
+                        <div class="life-image">
+                            <img src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Research Opportunities">
+                        </div>
+                        <div class="life-content">
+                            <h3>Research Opportunities</h3>
+                            <p>Undergraduate research programs, innovation labs, and collaboration with faculty on cutting-edge projects and publications.</p>
+                        </div>
+                    </div>
+                    <div class="life-card">
+                        <div class="life-image">
+                            <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Global Exchange">
+                        </div>
+                        <div class="life-content">
+                            <h3>Global Exchange</h3>
+                            <p>International exchange programs with partner universities worldwide, providing global exposure and cultural experiences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="student-testimonials">
+            <div class="container">
+                <h2 class="section-title">What Our Students Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Excellence College has been transformative. The professors are incredibly supportive, and the hands-on learning approach has prepared me well for my career."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Jessica Parker">
+                            <div class="author-info">
+                                <h4>Jessica Parker</h4>
+                                <p>Computer Science, Final Year</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"The campus life here is amazing. From technical clubs to cultural events, there's something for everyone. I've grown both academically and personally."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=300" alt="David Martinez">
+                            <div class="author-info">
+                                <h4>David Martinez</h4>
+                                <p>Business Administration, Third Year</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"The research opportunities here are incredible. Working on real-world projects with industry partners has given me invaluable experience."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Maria Lopez">
+                            <div class="author-info">
+                                <h4>Maria Lopez</h4>
+                                <p>Biotechnology, Second Year</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="student-achievements">
+            <div class="container">
+                <h2 class="section-title">Student Achievements</h2>
+                <div class="achievements-slider">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>National Coding Championship</h3>
+                        <p>Our Computer Science students won 1st place in the National Coding Championship 2024, competing against 500+ teams.</p>
+                        <div class="achievement-date">March 2024</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Business Plan Competition</h3>
+                        <p>Excellence College team secured top 3 positions in the Inter-University Business Plan Competition with innovative startup ideas.</p>
+                        <div class="achievement-date">January 2024</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Research Publication</h3>
+                        <p>Undergraduate students published research papers in international journals, contributing to scientific advancement.</p>
+                        <div class="achievement-date">December 2023</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Cultural Fest Victory</h3>
+                        <p>Won the Inter-College Cultural Festival with outstanding performances in music, dance, and theatrical competitions.</p>
+                        <div class="achievement-date">November 2023</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="student-clubs">
+            <div class="container">
+                <h2 class="section-title">Student Organizations</h2>
+                <div class="clubs-grid">
+                    <div class="club-card">
+                        <div class="club-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Coding Club</h3>
+                        <p>Programming competitions, hackathons, and coding workshops for technology enthusiasts.</p>
+                        <span class="member-count">250+ Members</span>
+                    </div>
+                    <div class="club-card">
+                        <div class="club-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Arts & Culture</h3>
+                        <p>Creative expression through painting, music, dance, and theatrical performances.</p>
+                        <span class="member-count">180+ Members</span>
+                    </div>
+                    <div class="club-card">
+                        <div class="club-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h3>Sports Club</h3>
+                        <p>Various sports activities, tournaments, and fitness programs for physical wellness.</p>
+                        <span class="member-count">300+ Members</span>
+                    </div>
+                    <div class="club-card">
+                        <div class="club-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Social Service</h3>
+                        <p>Community outreach programs, environmental initiatives, and social impact projects.</p>
+                        <span class="member-count">150+ Members</span>
+                    </div>
+                    <div class="club-card">
+                        <div class="club-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Innovation Lab</h3>
+                        <p>Entrepreneurship, startup incubation, and innovative project development support.</p>
+                        <span class="member-count">120+ Members</span>
+                    </div>
+                    <div class="club-card">
+                        <div class="club-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <h3>Debate Society</h3>
+                        <p>Public speaking, debates, and communication skills development through competitions.</p>
+                        <span class="member-count">100+ Members</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="student-resources">
+            <div class="container">
+                <h2 class="section-title">Student Resources</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <i class="fas fa-book"></i>
+                        <h3>Digital Library</h3>
+                        <p>Access to millions of books, journals, and research papers online 24/7.</p>
+                    </div>
+                    <div class="resource-card">
+                        <i class="fas fa-user-md"></i>
+                        <h3>Counseling Services</h3>
+                        <p>Professional mental health support and academic counseling services.</p>
+                    </div>
+                    <div class="resource-card">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Career Center</h3>
+                        <p>Job placement assistance, resume building, and interview preparation.</p>
+                    </div>
+                    <div class="resource-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Tutoring Support</h3>
+                        <p>Peer tutoring and academic support programs for challenging subjects.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Excellence College</h3>
+                    <p>Committed to providing quality education and shaping future leaders across various disciplines.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'courses' %}">Courses</a></li>
+                        <li><a href="{% url 'placements' %}">Placements</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@excellencecollege.edu</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Education Ave, City, State 12345</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Excellence College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <script src="{% static 'js/navigation.js' %}" defer></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Excellence College</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h2>Excellence College</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                    <li><a href="{% url 'about' %}" class="nav-link">About</a></li>
+                    <li><a href="{% url 'courses' %}" class="nav-link active">Courses</a></li>
+                    <li><a href="{% url 'placements' %}" class="nav-link">Placements</a></li>
+                    <li><a href="{% url 'students' %}" class="nav-link">Students</a></li>
+                    <li><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Our Courses</h1>
+                <p>Discover comprehensive programs designed to prepare you for successful careers</p>
+            </div>
+        </section>
+
+        <section class="course-categories">
+            <div class="container">
+                <div class="category-filters">
+                    <button class="filter-btn active" data-filter="all">All Courses</button>
+                    <button class="filter-btn" data-filter="engineering">Engineering</button>
+                    <button class="filter-btn" data-filter="business">Business</button>
+                    <button class="filter-btn" data-filter="science">Science</button>
+                    <button class="filter-btn" data-filter="arts">Arts</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="courses-grid">
+            <div class="container">
+                <div class="courses-container">
+                    <div class="course-card" data-category="engineering">
+                        <div class="course-image">
+                            <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Computer Science">
+                        </div>
+                        <div class="course-content">
+                            <div class="course-category">Engineering</div>
+                            <h3>Computer Science & Engineering</h3>
+                            <p>Comprehensive program covering software development, algorithms, AI, and emerging technologies.</p>
+                            <div class="course-details">
+                                <span><i class="fas fa-clock"></i> 4 Years</span>
+                                <span><i class="fas fa-users"></i> 120 Students</span>
+                                <span><i class="fas fa-dollar-sign"></i> $15,000</span>
+                            </div>
+                            <a href="{% url 'contact' %}" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-category="business">
+                        <div class="course-image">
+                            <img src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Business Administration">
+                        </div>
+                        <div class="course-content">
+                            <div class="course-category">Business</div>
+                            <h3>Business Administration</h3>
+                            <p>Learn management principles, finance, marketing, and leadership skills for business success.</p>
+                            <div class="course-details">
+                                <span><i class="fas fa-clock"></i> 4 Years</span>
+                                <span><i class="fas fa-users"></i> 100 Students</span>
+                                <span><i class="fas fa-dollar-sign"></i> $12,000</span>
+                            </div>
+                            <a href="{% url 'contact' %}" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-category="engineering">
+                        <div class="course-image">
+                            <img src="https://images.pexels.com/photos/3862634/pexels-photo-3862634.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Mechanical Engineering">
+                        </div>
+                        <div class="course-content">
+                            <div class="course-category">Engineering</div>
+                            <h3>Mechanical Engineering</h3>
+                            <p>Design, build, and analyze mechanical systems with hands-on laboratory experience.</p>
+                            <div class="course-details">
+                                <span><i class="fas fa-clock"></i> 4 Years</span>
+                                <span><i class="fas fa-users"></i> 80 Students</span>
+                                <span><i class="fas fa-dollar-sign"></i> $14,000</span>
+                            </div>
+                            <a href="{% url 'contact' %}" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-category="science">
+                        <div class="course-image">
+                            <img src="https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Biotechnology">
+                        </div>
+                        <div class="course-content">
+                            <div class="course-category">Science</div>
+                            <h3>Biotechnology</h3>
+                            <p>Explore the intersection of biology and technology in medicine, agriculture, and research.</p>
+                            <div class="course-details">
+                                <span><i class="fas fa-clock"></i> 4 Years</span>
+                                <span><i class="fas fa-users"></i> 60 Students</span>
+                                <span><i class="fas fa-dollar-sign"></i> $16,000</span>
+                            </div>
+                            <a href="{% url 'contact' %}" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-category="business">
+                        <div class="course-image">
+                            <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Digital Marketing">
+                        </div>
+                        <div class="course-content">
+                            <div class="course-category">Business</div>
+                            <h3>Digital Marketing</h3>
+                            <p>Master online marketing strategies, social media, SEO, and digital analytics.</p>
+                            <div class="course-details">
+                                <span><i class="fas fa-clock"></i> 3 Years</span>
+                                <span><i class="fas fa-users"></i> 90 Students</span>
+                                <span><i class="fas fa-dollar-sign"></i> $10,000</span>
+                            </div>
+                            <a href="{% url 'contact' %}" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-category="arts">
+                        <div class="course-image">
+                            <img src="https://images.pexels.com/photos/3693193/pexels-photo-3693193.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Graphic Design">
+                        </div>
+                        <div class="course-content">
+                            <div class="course-category">Arts</div>
+                            <h3>Graphic Design</h3>
+                            <p>Creative program focusing on visual communication, branding, and digital design tools.</p>
+                            <div class="course-details">
+                                <span><i class="fas fa-clock"></i> 3 Years</span>
+                                <span><i class="fas fa-users"></i> 70 Students</span>
+                                <span><i class="fas fa-dollar-sign"></i> $11,000</span>
+                            </div>
+                            <a href="{% url 'contact' %}" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-category="science">
+                        <div class="course-image">
+                            <img src="https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Data Science">
+                        </div>
+                        <div class="course-content">
+                            <div class="course-category">Science</div>
+                            <h3>Data Science</h3>
+                            <p>Learn statistical analysis, machine learning, and big data technologies for data-driven insights.</p>
+                            <div class="course-details">
+                                <span><i class="fas fa-clock"></i> 4 Years</span>
+                                <span><i class="fas fa-users"></i> 85 Students</span>
+                                <span><i class="fas fa-dollar-sign"></i> $17,000</span>
+                            </div>
+                            <a href="{% url 'contact' %}" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-category="arts">
+                        <div class="course-image">
+                            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Psychology">
+                        </div>
+                        <div class="course-content">
+                            <div class="course-category">Arts</div>
+                            <h3>Psychology</h3>
+                            <p>Study human behavior, mental processes, and therapeutic approaches in clinical settings.</p>
+                            <div class="course-details">
+                                <span><i class="fas fa-clock"></i> 4 Years</span>
+                                <span><i class="fas fa-users"></i> 95 Students</span>
+                                <span><i class="fas fa-dollar-sign"></i> $13,000</span>
+                            </div>
+                            <a href="{% url 'contact' %}" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                    <div class="course-card" data-category="engineering">
+                        <div class="course-image">
+                            <img src="pexels-pixabay-207580.jpg" alt="Cybersecurity">
+                        </div>
+                        <div class="course-content">
+                            <div class="course-category">Engineering</div>
+                            <h3>Cybersecurity</h3>
+                            <p>Study protecting computer systems and networks from digital attacks.</p>
+                            <div class="course-details">
+                                <span><i class="fas fa-clock"></i> 4 Years</span>
+                                <span><i class="fas fa-users"></i> 60 Students</span>
+                                <span><i class="fas fa-dollar-sign"></i> $15,000</span>
+                            </div>
+                            <a href="{% url 'contact' %}" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="admission-info">
+            <div class="container">
+                <div class="admission-content">
+                    <h2>Admission Information</h2>
+                    <div class="admission-grid">
+                        <div class="admission-card">
+                            <h3>Application Deadlines</h3>
+                            <ul>
+                                <li>Early Decision: November 15</li>
+                                <li>Regular Decision: February 1</li>
+                                <li>Late Applications: April 30</li>
+                            </ul>
+                        </div>
+                        <div class="admission-card">
+                            <h3>Requirements</h3>
+                            <ul>
+                                <li>High School Diploma</li>
+                                <li>Entrance Exam Scores</li>
+                                <li>Letters of Recommendation</li>
+                                <li>Personal Statement</li>
+                            </ul>
+                        </div>
+                        <div class="admission-card">
+                            <h3>Financial Aid</h3>
+                            <ul>
+                                <li>Merit-based Scholarships</li>
+                                <li>Need-based Aid</li>
+                                <li>Work-Study Programs</li>
+                                <li>Student Loans</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Excellence College</h3>
+                    <p>Committed to providing quality education and shaping future leaders across various disciplines.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'courses' %}">Courses</a></li>
+                        <li><a href="{% url 'placements' %}">Placements</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@excellencecollege.edu</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Education Ave, City, State 12345</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Excellence College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <script src="{% static 'js/navigation.js' %}" defer></script>
+    <script src="{% static 'js/courses.js' %}" defer></script>
+</body>
+</html>

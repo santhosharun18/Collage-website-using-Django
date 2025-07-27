@@ -1,0 +1,301 @@
+{% load static %} {# Add this at the very top of your HTML file to use static files #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Excellence College</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"> {# Corrected static file path #}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .error-message {
+            color: rgb(210, 18, 18);
+            font-size: 0.875rem;
+            margin-top: 4px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h2>Excellence College</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                    <li><a href="{% url 'about' %}" class="nav-link">About</a></li>
+                    <li><a href="{% url 'courses' %}" class="nav-link">Courses</a></li>
+                    <li><a href="{% url 'placements' %}" class="nav-link">Placements</a></li>
+                    <li><a href="{% url 'students' %}" class="nav-link">Students</a></li>
+                    <li><a href="{% url 'contact' %}" class="nav-link active">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Get In Touch</h1>
+                <p>Ready to start your educational journey? We're here to help you every step of the way</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Contact Information</h2>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Address</h3>
+                                <p>123 Education Avenue<br>University District<br>City, State 12345</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Phone</h3>
+                                <p>Main: +1 (555) 123-4567<br>Admissions: +1 (555) 123-4568<br>Support: +1 (555) 123-4569</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p>info@excellencecollege.edu<br>admissions@excellencecollege.edu<br>support@excellencecollege.edu</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Office Hours</h3>
+                                <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-section">
+                        <h2>Send us a Message</h2>
+                        {# Display Django messages (success/error/info) #}
+                        {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+
+                        <form class="contact-form" id="contactForm" method="POST" action="{% url 'contact' %}">
+                            {% csrf_token %} {# VERY IMPORTANT for Django forms! #}
+
+                            {# Hidden inputs for form persistence if you want to keep using the JS #}
+                            {# Alternatively, you can use Django's form rendering for labels too #}
+
+                            <div class="form-row">
+                            <div class="form-group">
+                                <label for="{{ form.first_name.id_for_label }}">First Name *</label>
+                                {{ form.first_name }}
+                                <small class="error-message" id="firstNameError"></small>
+                                {% if form.first_name.errors %}
+                                    <div class="field-error">{{ form.first_name.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.last_name.id_for_label }}">Last Name *</label>
+                                {{ form.last_name }}
+                                <small class="error-message" id="lastNameError"></small>
+                                {% if form.last_name.errors %}
+                                    <div class="field-error">{{ form.last_name.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="{{ form.email.id_for_label }}">Email Address *</label>
+                                {{ form.email }}
+                                {% if form.email.errors %}
+                                    <div class="field-error">{{ form.email.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.phone.id_for_label }}">Phone Number</label>
+                                {{ form.phone }}
+                                {% if form.phone.errors %}
+                                    <div class="field-error">{{ form.phone.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.interest.id_for_label }}">Area of Interest</label>
+                            {{ form.interest }}
+                            {% if form.interest.errors %}
+                                <div class="field-error">{{ form.interest.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.inquiry_type.id_for_label }}">Inquiry Type</label>
+                            {{ form.inquiry_type }}
+                            {% if form.inquiry_type.errors %}
+                                <div class="field-error">{{ form.inquiry_type.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.message.id_for_label }}">Message *</label>
+                            {{ form.message }}
+                            {% if form.message.errors %}
+                                <div class="field-error">{{ form.message.errors }}</div>
+                            {% endif %}
+                        </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="container">
+                <h2 class="section-title">Find Us</h2>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>Interactive Campus Map</h3>
+                        <p>Located in the heart of the University District, our campus is easily accessible by public transportation and offers ample parking facilities.</p>
+                        <div class="map-features">
+                            <div class="feature">
+                                <i class="fas fa-car"></i>
+                                <span>Free Parking</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bus"></i>
+                                <span>Public Transit</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-wheelchair"></i>
+                                <span>Accessible</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-links">
+            <div class="container">
+                <h2 class="section-title">Quick Actions</h2>
+                <div class="quick-actions-grid">
+                    <a href="{% url 'courses' %}" class="quick-action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3>View Programs</h3>
+                        <p>Explore our comprehensive course offerings</p>
+                    </a>
+                    <a href="{% url 'about' %}" class="quick-action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Schedule Visit</h3>
+                        <p>Book a campus tour and information session</p>
+                    </a>
+                    <a href="{% url 'placements' %}" class="quick-action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Apply Online</h3>
+                        <p>Start your application process today</p>
+                    </a>
+                    <a href="#" class="quick-action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h3>FAQ</h3>
+                        <p>Find answers to commonly asked questions</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Excellence College</h3>
+                    <p>Committed to providing quality education and shaping future leaders across various disciplines.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'courses' %}">Courses</a></li>
+                        <li><a href="{% url 'placements' %}">Placements</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@excellencecollege.edu</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Education Ave, City, State 12345</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Excellence College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <script src="{% static 'js/navigation.js' %}" defer></script>
+    {# It's good practice to use Django's static tag for consistency #}
+    <script src="{% static 'js/contact.js' %}"></script>
+</body>
+</html>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const firstNameInput = document.getElementById("id_first_name");
+    const lastNameInput = document.getElementById("id_last_name");
+
+    const firstNameError = document.getElementById("firstNameError");
+    const lastNameError = document.getElementById("lastNameError");
+
+    function validateNameField(input, errorEl) {
+        const value = input.value.trim();
+        const isValid = /^[A-Za-z]+$/.test(value);
+        if (value === "") {
+            errorEl.textContent = "This field is required.";
+        } else if (!isValid) {
+            errorEl.textContent = "Only letters are allowed.";
+        } else {
+            errorEl.textContent = "";
+        }
+    }
+
+    firstNameInput.addEventListener("input", function () {
+        validateNameField(firstNameInput, firstNameError);
+    });
+
+    lastNameInput.addEventListener("input", function () {
+        validateNameField(lastNameInput, lastNameError);
+    });
+});
+</script>
