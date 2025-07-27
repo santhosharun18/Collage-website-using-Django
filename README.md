@@ -146,13 +146,22 @@ To set up and run this project locally, follow these steps:
 ## Screenshots
 
 ### 🔹 Homepage
-![Homepage](screenshots/homepage.png)
+![Homepage](screenshot/home.png)
 
-### 🔹 Contact Form
-![Contact Form](screenshots/contact_form.png)
+### 🔹  About
+![About](screenshot/about.png)
 
-### 🔹 Admin Panel
-![Admin Panel](screenshots/admin_panel.png)
+### 🔹  Courses
+![Course](screenshot/courses.png)
+
+### 🔹  Placement
+![Placement](screenshot/placement.png)
+
+### 🔹  Students
+![students](screenshot/students.png)
+
+### 🔹  Contact Form
+![ContactForm](screenshot/contact.png)
 
 ## Contributing
 
