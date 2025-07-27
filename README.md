@@ -180,6 +180,6 @@ If you'd like to contribute to this project, please follow these steps:
 
 ## Contact
 
-Santhosh Arun - [Your Email/LinkedIn Profile]
+Santhosh Arun - [santhosharun31@gmail.com]
 
 -----
